@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://Service.mailService.epam.com/" xmlns:tns="http://Service.mailService.epam.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="deleteMailByAddress" type="tns:deleteMailByAddress"/>
+
+  <xs:element name="deleteMailByAddressResponse" type="tns:deleteMailByAddressResponse"/>
+
+  <xs:element name="getAllMails" type="tns:getAllMails"/>
+
+  <xs:element name="getAllMailsResponse" type="tns:getAllMailsResponse"/>
+
+  <xs:element name="getMailByAddress" type="tns:getMailByAddress"/>
+
+  <xs:element name="getMailByAddressResponse" type="tns:getMailByAddressResponse"/>
+
+  <xs:element name="getMailBySubject" type="tns:getMailBySubject"/>
+
+  <xs:element name="getMailBySubjectResponse" type="tns:getMailBySubjectResponse"/>
+
+  <xs:element name="sendMail" type="tns:sendMail"/>
+
+  <xs:element name="sendMailResponse" type="tns:sendMailResponse"/>
+
+  <xs:complexType name="getAllMails">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getAllMailsResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:email" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="email">
+    <xs:sequence>
+      <xs:element name="address" type="xs:string" minOccurs="0"/>
+      <xs:element name="body" type="xs:string" minOccurs="0"/>
+      <xs:element name="subj" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getMailByAddress">
+    <xs:sequence>
+      <xs:element name="address" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getMailByAddressResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:email" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteMailByAddress">
+    <xs:sequence>
+      <xs:element name="address" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteMailByAddressResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="sendMail">
+    <xs:sequence>
+      <xs:element name="address" type="xs:string" minOccurs="0"/>
+      <xs:element name="subject" type="xs:string" minOccurs="0"/>
+      <xs:element name="body" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="sendMailResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getMailBySubject">
+    <xs:sequence>
+      <xs:element name="address" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getMailBySubjectResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:email" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+
