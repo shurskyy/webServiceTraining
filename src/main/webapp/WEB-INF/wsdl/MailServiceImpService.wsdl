@@ -12,23 +12,17 @@
   <message name="deleteMailByAddressResponse">
     <part name="parameters" element="tns:deleteMailByAddressResponse"/>
   </message>
-  <message name="sendMail">
-    <part name="parameters" element="tns:sendMail"/>
-  </message>
-  <message name="sendMailResponse">
-    <part name="parameters" element="tns:sendMailResponse"/>
-  </message>
-  <message name="getMailByAddress">
-    <part name="parameters" element="tns:getMailByAddress"/>
-  </message>
-  <message name="getMailByAddressResponse">
-    <part name="parameters" element="tns:getMailByAddressResponse"/>
-  </message>
   <message name="getMailBySubject">
     <part name="parameters" element="tns:getMailBySubject"/>
   </message>
   <message name="getMailBySubjectResponse">
     <part name="parameters" element="tns:getMailBySubjectResponse"/>
+  </message>
+  <message name="sendMail">
+    <part name="parameters" element="tns:sendMail"/>
+  </message>
+  <message name="sendMailResponse">
+    <part name="parameters" element="tns:sendMailResponse"/>
   </message>
   <message name="getAllMails">
     <part name="parameters" element="tns:getAllMails"/>
@@ -36,26 +30,32 @@
   <message name="getAllMailsResponse">
     <part name="parameters" element="tns:getAllMailsResponse"/>
   </message>
+  <message name="getMailByAddress">
+    <part name="parameters" element="tns:getMailByAddress"/>
+  </message>
+  <message name="getMailByAddressResponse">
+    <part name="parameters" element="tns:getMailByAddressResponse"/>
+  </message>
   <portType name="MailService">
     <operation name="deleteMailByAddress">
       <input wsam:Action="http://Service.mailService.epam.com/MailService/deleteMailByAddressRequest" message="tns:deleteMailByAddress"/>
       <output wsam:Action="http://Service.mailService.epam.com/MailService/deleteMailByAddressResponse" message="tns:deleteMailByAddressResponse"/>
     </operation>
-    <operation name="sendMail">
-      <input wsam:Action="http://Service.mailService.epam.com/MailService/sendMailRequest" message="tns:sendMail"/>
-      <output wsam:Action="http://Service.mailService.epam.com/MailService/sendMailResponse" message="tns:sendMailResponse"/>
-    </operation>
-    <operation name="getMailByAddress">
-      <input wsam:Action="http://Service.mailService.epam.com/MailService/getMailByAddressRequest" message="tns:getMailByAddress"/>
-      <output wsam:Action="http://Service.mailService.epam.com/MailService/getMailByAddressResponse" message="tns:getMailByAddressResponse"/>
-    </operation>
     <operation name="getMailBySubject">
       <input wsam:Action="http://Service.mailService.epam.com/MailService/getMailBySubjectRequest" message="tns:getMailBySubject"/>
       <output wsam:Action="http://Service.mailService.epam.com/MailService/getMailBySubjectResponse" message="tns:getMailBySubjectResponse"/>
     </operation>
+    <operation name="sendMail">
+      <input wsam:Action="http://Service.mailService.epam.com/MailService/sendMailRequest" message="tns:sendMail"/>
+      <output wsam:Action="http://Service.mailService.epam.com/MailService/sendMailResponse" message="tns:sendMailResponse"/>
+    </operation>
     <operation name="getAllMails">
       <input wsam:Action="http://Service.mailService.epam.com/MailService/getAllMailsRequest" message="tns:getAllMails"/>
       <output wsam:Action="http://Service.mailService.epam.com/MailService/getAllMailsResponse" message="tns:getAllMailsResponse"/>
+    </operation>
+    <operation name="getMailByAddress">
+      <input wsam:Action="http://Service.mailService.epam.com/MailService/getMailByAddressRequest" message="tns:getMailByAddress"/>
+      <output wsam:Action="http://Service.mailService.epam.com/MailService/getMailByAddressResponse" message="tns:getMailByAddressResponse"/>
     </operation>
   </portType>
   <binding name="MailServiceImpPortBinding" type="tns:MailService">
@@ -69,24 +69,6 @@
         <soap:body use="literal"/>
       </output>
     </operation>
-    <operation name="sendMail">
-      <soap:operation soapAction=""/>
-      <input>
-        <soap:body use="literal"/>
-      </input>
-      <output>
-        <soap:body use="literal"/>
-      </output>
-    </operation>
-    <operation name="getMailByAddress">
-      <soap:operation soapAction=""/>
-      <input>
-        <soap:body use="literal"/>
-      </input>
-      <output>
-        <soap:body use="literal"/>
-      </output>
-    </operation>
     <operation name="getMailBySubject">
       <soap:operation soapAction=""/>
       <input>
@@ -96,7 +78,25 @@
         <soap:body use="literal"/>
       </output>
     </operation>
+    <operation name="sendMail">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
     <operation name="getAllMails">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getMailByAddress">
       <soap:operation soapAction=""/>
       <input>
         <soap:body use="literal"/>
