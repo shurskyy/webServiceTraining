@@ -3,6 +3,7 @@ package com.epam.mailService.Service;
 import com.epam.mailService.dao.Email;
 import com.epam.mailService.dao.SoapEmailDAO;
 
+import javax.jws.WebParam;
 import javax.jws.WebService;
 import java.util.ArrayList;
 

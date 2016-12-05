@@ -12,25 +12,25 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "deleteMailByAddress", namespace = "http://Service.mailService.epam.com/")
 public class DeleteMailByAddress {
 
-    @XmlElement(name = "arg0", namespace = "")
-    private String arg0;
+    @XmlElement(name = "address", namespace = "")
+    private String address;
 
     /**
      * 
      * @return
      *     returns String
      */
-    public String getArg0() {
-        return this.arg0;
+    public String getAddress() {
+        return this.address;
     }
 
     /**
      * 
-     * @param arg0
-     *     the value for the arg0 property
+     * @param address
+     *     the value for the address property
      */
-    public void setArg0(String arg0) {
-        this.arg0 = arg0;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
 }

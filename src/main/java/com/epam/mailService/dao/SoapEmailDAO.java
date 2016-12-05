@@ -28,9 +28,8 @@ public class SoapEmailDAO implements EmailDAO {
     }
 
     public Email getMailBySubject(String subj) {
-        System.out.println(emails.size());
         for (Email email : emails) {
-            if (email.getAddress().equals(subj)) {
+            if (email.getSubj().equals(subj)) {
                 return email;
             }
         }

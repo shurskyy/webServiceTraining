@@ -3,7 +3,11 @@ package com.epam.mailService.Service;
 import com.epam.mailService.dao.Email;
 
 import javax.jws.WebMethod;
+import javax.jws.WebParam;
+import javax.jws.WebResult;
 import javax.jws.WebService;
+import javax.xml.ws.RequestWrapper;
+import javax.xml.ws.ResponseWrapper;
 import java.util.ArrayList;
 
 /**
@@ -13,13 +17,14 @@ import java.util.ArrayList;
 @WebService
 public interface MailService {
     @WebMethod
-    public Boolean sendMail(String mail, String subj, String body);
+    public Boolean sendMail(@WebParam(name = "address") String mail, @WebParam (name = "subject") String subj, @WebParam(name = "body") String body);
     @WebMethod
     public ArrayList<Email> getAllMails();
     @WebMethod
-    public Email getMailByAddress(String address);
+    public Email getMailByAddress(@WebParam(name = "address") String address);
     @WebMethod
-    public Email getMailBySubject(String subj);
+    @WebResult(partName="getSubjectResponse")
+    public Email getMailBySubject(@WebParam(name = "subject") String subj);
     @WebMethod
-    public Boolean deleteMailByAddress(String address);
+    public Boolean deleteMailByAddress(@WebParam(name = "address") String address);
 }

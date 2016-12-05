@@ -12,25 +12,25 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "getMailBySubject", namespace = "http://Service.mailService.epam.com/")
 public class GetMailBySubject {
 
-    @XmlElement(name = "arg0", namespace = "")
-    private String arg0;
+    @XmlElement(name = "subject", namespace = "")
+    private String subject;
 
     /**
      * 
      * @return
      *     returns String
      */
-    public String getArg0() {
-        return this.arg0;
+    public String getSubject() {
+        return this.subject;
     }
 
     /**
      * 
-     * @param arg0
-     *     the value for the arg0 property
+     * @param subject
+     *     the value for the subject property
      */
-    public void setArg0(String arg0) {
-        this.arg0 = arg0;
+    public void setSubject(String subject) {
+        this.subject = subject;
     }
 
 }
